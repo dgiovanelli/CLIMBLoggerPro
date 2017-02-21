@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:fitsSystemWindows="true"
+    android:background="@color/material_blue_grey_950">
+    <!--android:background="@color/material_blue_grey_900"-->
+    <!--tools:context=".ScanActivity">-->
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_margin="4dp"
+        tools:context=".ScanActivity">
+
+        <!--    <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay">
+
+                <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+                    android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+            </android.support.design.widget.AppBarLayout>-->
+
+        <!--<include layout="@layout/content_scan" />-->
+
+        <!--<android.support.design.widget.FloatingActionButton android:id="@+id/fab"-->
+        <!--android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|end" android:layout_margin="@dimen/fab_margin"-->
+        <!--android:src="@android:drawable/ic_dialog_email" />-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical|center_horizontal">
+
+            <Button
+                android:id="@+id/buttonStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Start\nScan"
+                android:textSize="12sp"
+                android:layout_weight="0.25"
+                />
+
+            <Button
+                android:id="@+id/buttonStop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Stop\nscan"
+                android:textSize="12sp"
+                android:layout_weight="0.25"
+                />
+
+            <Button
+                android:id="@+id/buttonTag"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Insert\nTag"
+                android:textSize="12sp"
+                android:layout_weight="0.25"
+                />
+
+            <CheckBox
+                android:id="@+id/scanforall_ckbox"
+                android:text="Scan for all"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:textColor="#a3a3a3"
+                android:checked="true" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="top|center_horizontal"
+            android:orientation="vertical"
+            android:layout_margin="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:gravity="top|center_horizontal"
+                android:orientation="vertical"
+                android:layout_margin="0dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|center_horizontal"
+                    android:orientation="horizontal"
+                    android:layout_margin="0dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VISIBLE CLIMBM BEACONS: "
+                        android:textSize="20dp"
+                        android:textColor="#a3a3a3"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/nodesAmountTextBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:textColor="#a3a3a3" />
+                </LinearLayout>
+                <ExpandableListView
+                    android:id="@+id/list"
+                    android:layout_height="fill_parent"
+                    android:layout_width="match_parent"
+                    android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft" />
+                <!--<ListView
+                    android:id="@+id/list"
+                    android:layout_height="fill_parent"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="top"
+                    android:layout_margin="5dp">
+                </ListView>-->
+
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BROADCAST MESSAGES"
+                    android:textSize="15dp"
+                    android:textColor="#a3a3a3"
+                    android:textStyle="bold"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/broadcast_label"/>
+                <TextView
+                    android:id="@+id/filename_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/broadcast_label"
+                    android:layout_alignParentLeft="true"
+                    android:text="Log Filename: "
+                    android:textSize="12dp"
+                    android:textColor="#a3a3a3" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/broadcast_label"
+                    android:layout_toEndOf="@id/filename_label"
+                    android:id="@+id/filenameTextBox"
+                    android:textSize="12dp"
+                    android:textColor="#a3a3a3" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/filename_label"
+                android:gravity="center_vertical|center_horizontal"
+                >
+
+                <Button
+                    android:id="@+id/buttonCheckInAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ck-in\nall"
+                    android:textSize="12sp"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/buttonCheckOutAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ck-out\nall"
+                    android:textSize="12sp"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/buttonCheckInBcast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ck-in\nbcast"
+                    android:textSize="12sp"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/buttonCheckOutBcast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ck-out\nbcast"
+                    android:textSize="12sp"
+                    android:layout_weight="1"/>
+
+
+                <Button
+                    android:id="@+id/scheduleWakeUpAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wake\nup"
+                    android:textSize="12sp"
+                    android:layout_weight="1"/>
+
+                <!--<Button
+                    android:id="@+id/test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="test\nTIME" />-->
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <!--<View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_weight="0.9"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONSOLE:"
+                android:textSize="20dp"
+                android:textColor="#a3a3a3"
+                android:textStyle="bold" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollView" >
+
+                <EditText
+                    android:id="@+id/console_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:maxLines="100"
+                    android:gravity="bottom"
+                    android:inputType="textMultiLine"
+                    android:textSize="10sp"
+                    android:textColor="#a3a3a3"
+                    android:scrollbars = "vertical">
+                    <requestFocus />
+                </EditText>
+            </ScrollView>
+        </LinearLayout>-->
+
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
